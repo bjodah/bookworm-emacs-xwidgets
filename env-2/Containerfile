@@ -1,0 +1,3 @@
+FROM localhost/emx1
+
+ADD ./opt /opt
