@@ -1,3 +1,9 @@
 FROM localhost/emx1
 
 ADD ./opt /opt
+
+RUN apt-get install --assume-yes --no-install-recommends fonts-anonymous-pro busybox \
+    && for FONT in Monofur NerdFontsSymbolsOnly; do curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/${FONT}.tar.xz | tar -C /usr/local/share/fonts -xJ; done \
+    && env -C /tmp curl -Ls https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/branding/Amazon_Typefaces_Complete_Font_Set_Mar2020.zip | busybox unzip - \
+    && bash -c 'find /tmp/ -type f -name "*.ttf" -exec cp {} ~/.local/share/fonts/ \;'
+

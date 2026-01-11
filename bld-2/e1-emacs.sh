@@ -113,6 +113,7 @@ fi
 
 
 cd $EMACS_SRC_DIR
+sed -i '/pgtk_display_x_warning (dpy);$/d' src/pgtkterm.c  # I already know PGTK+X11 is unsupported...
 
 ./autogen.sh
 

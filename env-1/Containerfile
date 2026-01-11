@@ -62,4 +62,5 @@ RUN apt-get install --assume-yes --no-install-recommends \
     libxpm-dev \
     libgnutls28-dev \
     libgif-dev `# makeinfo` \
-    libncurses-dev
+    libncurses-dev \
+    libtool-bin
